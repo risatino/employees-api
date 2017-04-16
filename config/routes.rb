@@ -18,4 +18,6 @@ Rails.application.routes.draw do
       delete '/employees/:id' => 'employees#destroy'
     end 
   end
+
+  get '/employees/:id' => 'employees#show'
 end
