@@ -1,0 +1,23 @@
+<h1>The Employees App</h1>
+
+<div ng-app="app">
+  {{ 1 + 1 }}
+
+<div ng-controller="employeesCtrl" ng-init="setup()"> 
+ <div ng-repeat="employee in employees track by $index">
+  <h2>{{ employee.first_name }} {{ employee.last_name }}</h2>
+  <h3>{{ employee.email }}</h3>
+  <p ng-click="deleteEmployee($index)">Delete</p>
+  </div>
+ </div>
+
+<div class="form">
+  <ul>
+    <li ng-repeat="error in errors">{{ error }}</li>
+  </ul>
+  <input type="text" ng-model="formFirstName" placeholder="Employee's First Name">
+  <input type="text" ng-model="formLastName" placeholder="Employee's Last Name">
+  <input type="text" ng-model="formEmail" placeholder="Employee's Email">
+  <button ng-click="addEmployee(formFirstName, formLastName, formEmail)">Submit</button>
+</div>
+</div>
